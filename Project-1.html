@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        :root {
+            --primary-text-color: #1e2124;
+            --secondary-text-color: #2c343d;
+            --accent-color: #2294ed;
+            --accent-color-dark: #1d69a3;
+            --padding-inline-section: 20px;
+        }
+
+        body {
+            font-family: Gabarito;
+            color: var(--primary-text-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-text-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            font-family: serif;
+            color: var(--secondary-text-color);
+            line-height: 1.6rem;
+            letter-spacing: 0.3px;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: var(--primary-text-color);
+            transition: .2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+
+        .small-bold-class {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin-inline: auto;
+            padding-inline: var(--padding-inline-section);
+            overflow: hidden;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* Top Banner */
+
+        .top-banner {
+            background-color: #4fb3d4;
+        }
+
+        .banner-text {
+            padding: 15px 30px;
+            color: white;
+            text-align: center;
+        }
+
+
+        /* nav */
+
+
+        .main-nav {
+            margin-top: 15px;
+            justify-content: space-between;
+        }
+
+        .company-logo img {
+            width: 200px;
+        }
+
+        .nav-links ul {
+            justify-content: end;
+            gap: 40px;
+        }
+
+        .nav-links {
+            flex-basis: 730px;
+        }
+
+
+        
+
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .primary-button {
+            color: white;
+            background-color: #2294ed;
+            border-radius: 6px;
+            font-weight: 700;
+            padding: 12px 24px;
+            box-shadow: 0 0 2px var(--secondary-text-color);
+            transition: .2s ease-out;
+        }
+
+        .primary-button:hover {
+            background-color: var(--accent-color-dark);
+            color: white;
+        }
+
+        .secondary-button {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 0.5px solid var(--secondary-text-color);
+        }
+
+        .header-section {
+            justify-content: center;
+            gap: 50px;
+            padding: 50px var(--padding-inline-section) 0;
+        }
+
+        .header-section .header-right img {
+            width: 100%;
+            margin-left: 30px;
+        }
+
+        .header-left h1 {
+            margin-bottom: 6px;
+            margin-top: 10px;
+            font-size: 3.5rem;
+        }
+
+        .header-left {
+            width: 40vw;
+        }
+
+        .getbtn {
+            margin-top: 20px;
+        }
+
+        .about-company-para {
+            text-align: center;
+            margin-block: 30px;
+            font-size: 1.25rem;
+        }
+
+        .companies-logo {
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .companies-logo img {
+            width: 100px;
+
+        }
+
+        .feature-header {
+            text-align: center;
+        }
+
+        .features-section {
+            padding: 60px var(--padding-inline-section) 0;
+        }
+
+        .feature-header h2 {
+            margin-bottom: 20px;
+        }
+
+        .feature-card img {
+            width: 80px;
+
+        }
+
+        .feature-card {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .features-area {
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .big-features-img img {
+            width: 30vw;
+        }
+
+        .big-features-container {
+            gap: 30px;
+        }
+
+        .big-features-section {
+            padding: 60px var(--padding-inline-section) 0;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .big-features-header h3 {
+            font-size: 1.7rem;
+        }
+
+        .big-features-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .example-header {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .example-header a {
+            margin-top: 20px;
+        }
+
+        .example-card {
+            margin-top: 40px;
+            border-radius: 8px;
+            width: 23%;
+            height: 300px;
+            background-color: #2294ed;
+            position: relative;
+            background: black;
+            transition: .4s;
+        }
+
+        .example-card:hover .card-text {
+            opacity: 1;
+            transition: .8s;
+        }
+
+
+        .example-areas {
+
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+
+        .card-text {
+            opacity: 0;
+            position: absolute;
+            bottom: 20px;
+            padding-inline: 20px;
+            color: white;
+            line-height: 23px;
+            letter-spacing: 1.5px;
+        }
+
+        .cta-section-container {
+            flex-direction: column;
+            gap: 30px;
+            color: white;
+        }
+
+        .cta-section {
+            width: 100%;
+            background-color: #183b54;
+            margin-top: 50px;
+            padding: 120px var(--padding-inline-section) 80px;
+        }
+
+        footer a img {
+            width: 300px;
+        }
+
+        .links-column {
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .footer-section {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        footer {
+            padding-block: 80px;
+        }
+
+        .subfooter {
+            background-color: #b9cde4;
+            padding: var(--padding-inline-section);
+
+        }
+
+        .subfooter a {
+            cursor: pointer;
+        }
+
+        .subfooter-section {
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-banner">
+        <div class="container">
+            <div class="small-bold-class banner-text">
+                😊New to usabitity Hub: open and closed card sorting
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="container main-nav flex">
+            <a href="#" class="company-logo">
+                <img src="data:image/png;base64,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"
+                    alt="company logo">
+            </a>
+
+            <div class="nav-links">
+                <ul class="flex">
+                    <li><a href="#Products">Products</a></li>
+                    <li><a href="#">Customer</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#" class="secondary-button">Sign in</a></li>
+                    <li><a href="#" class="primary-button">Sign up</a></li>
+                </ul>
+
+
+            </div>
+
+            
+        </div>
+    </nav>
+
+    <header>
+        <div class="container header-section flex">
+            <div class="header-left">
+                <h1>Design confidently</h1>
+                <p>UsabilityHub is a remote user research platform that <br> fakes the guesswork out of design decisions
+                    <br> by validating them with real users.
+                </p>
+                <a href="#" class="primary-button getbtn">Get Started</a>
+            </div>
+            <div class="header-right">
+                <img src="/image/meeting-people-anim.avif" alt="">
+            </div>
+        </div>
+    </header>
+
+    <div class="container companies-section">
+        <div class="small-bold-class about-company-para">
+            The world's best companies rely on UsabilityHub to make better design decisions.
+        </div>
+
+        <div class="companies-logo flex">
+            <img src="/image - Copy/amazon-logo.png" alt="">
+            <img src="/image - Copy/google-logo.png" alt="">
+            <img src="/image - Copy/taskrabbit-logo.png" alt="">
+            <img src="/image - Copy/airtable-logo.png" alt="">
+            <img src="/image/iphone-logo.png" alt="">
+            <img src="/image - Copy/godaddy-logo.png" alt="">
+            <img src="/image - Copy/asana-logo.png" alt="">
+        </div>
+    </div>
+
+    <div class="features-section" id="Products">
+
+
+        <div class="container">
+            <div class="feature-header">
+                <h2>Your user reasearch Swiss Army knife</h2>
+                <a href="#" class="secondary-button">See All Features <i class="fa-solid fa-right-long"></i></a>
+            </div>
+            <div class="features-area flex">
+                <div class="feature-card flex">
+                    <img src="/image - Copy/features1.jpg" alt="">
+                    <h3>card sorting</h3>
+                    <p>Discover how people group and label information </p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+
+                </div>
+                <div class="feature-card flex">
+                    <img src="/image - Copy/feature2.jpg" alt="">
+                    <h3>Prototype tests</h3>
+                    <p>Discover how people navigate your Figma prototypes. </p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+
+                </div>
+                <div class="feature-card flex">
+                    <img src="/image - Copy/feature3.jpg" alt="">
+                    <h3>First click tests</h3>
+                    <p>Test interaction with first click and navigation tests.</p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+
+                </div>
+                <div class="feature-card flex">
+                    <img src="/image - Copy/feature4.jpg" alt="">
+                    <h3>Disign surveys</h3>
+                    <p>Get feedback on images, videous or audio files. </p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+
+                </div>
+                <div class="feature-card flex">
+                    <img src="/image - Copy/feature5.png" alt="">
+                    <h3>Preference tests</h3>
+                    <p>Find out which designs users prefer and why.</p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+
+                </div>
+                <div class="feature-card flex">
+                    <img src="/image - Copy/feature6.jpg" alt="">
+                    <h3>Five second tests</h3>
+                    <p>Test comprehensibility by measuring first impressions.</p>
+                    <a href="#" class="secondary-button">Learn More <i class="fa-solid fa-right-long"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="big-features-section flex">
+        <div class="container flex big-features-container">
+            <div class="big-features-img">
+                <img src="/image/project-img-person.jpg" alt="">
+            </div>
+            <div class="big-features-header flex">
+                <h4>Effortless validation for</h4>
+                <h3>Design prefessionals</h3>
+                <p>Test interfaces, interaction flows, iconography and more, to help you create intuitive and delightful
+                    experiences for your users.</p>
+            </div>
+        </div>
+        <div class="container flex big-features-container" style="flex-direction: row-reverse; gap: 2px;">
+            <div class="big-features-img">
+                <img src="/image/project-img2.png" alt="">
+            </div>
+            <div class="big-features-header flex">
+                <h4>Effortless validation for</h4>
+                <h3>Design prefessionals</h3>
+                <p>Test interfaces, interaction flows, iconography and more, to help you create intuitive and delightful
+                    experiences for your users.</p>
+            </div>
+        </div>
+        <div class="container flex big-features-container">
+            <div class="big-features-img">
+                <img src="/image/meets.avif" alt="">
+            </div>
+            <div class="big-features-header flex">
+                <h4>Effortless validation for</h4>
+                <h3>Design prefessionals</h3>
+                <p>Test interfaces, interaction flows, iconography and more, to help you create intuitive and delightful
+                    experiences for your users.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="examples-section">
+        <div class="container">
+            <div class="example-header">
+                <h2 class="example-header-h2">
+                    One platform, endless possiblities
+                </h2>
+                <a href="#" class="secondary-button">See more examples <i class="fa-solid fa-right-long"></i></a>
+            </div>
+
+            <div class="example-areas flex">
+                <a href="#" class="example-card"
+                    style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/image/card1.jpg);background-size: cover;">
+                    <h3 class="card-text">
+                        Can users complete a task in my software interface?
+                    </h3>
+                </a>
+                <a href="#" class="example-card"
+                    style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/image/card2.jpg);background-size: cover;">
+                    <h3 class="card-text">
+                        can users find improtant pages on my website?
+                    </h3>
+                </a>
+                <a href="#" class="example-card"
+                    style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/image/card3.jpg);background-size: cover;">
+                    <h3 class="card-text">
+                        Is my website's intended audience clear?
+                    </h3>
+                </a>
+                <a href="#" class="example-card"
+                    style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/image/card4.jpg);background-size: cover;">
+                    <h3 class="card-text">
+                        Do visitors understand what a page is about?
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="container flex cta-section-container">
+            <h2>Start Testing Today</h2>
+            <p style="color: white;">Take the guesswork out of design framwork</p>
+            <a href="#" class="primary-button">Get Started</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-section flex ">
+            <a href="#">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiYAAABbCAMAAABwM75CAAAA6lBMVEX////hZ2E+QkOMQj47P0A0OTo4PD3v7+/U1dW3ubm8v7/FxsYxNDViNjP4+Pg5PT9BRkenqKhRVVbMzs5ITE11eHmUl5dbYGHs7OyvsrJucnNiZmfl5ubgY13c3d319fWcn5/54eD99PR+gYKHiosrMDLgXljbZmBkNzNVWVr42tn66enphoL1ysjmcGrsmZXvrqzogHx7PTm5YV3oe3fvpqP0xsTrnZn1uLXqkY3TbWekXFlvQ0CYV1PFY15ePDmIUE2zWlW2Y16hV1KSW1h1R0TCYl2XTkmHTEnOYl1kNjR+PDigU0+pWVW5g7aTAAAQ7UlEQVR4nO1daXubuBp1GElgm2JjY7xgAwkkGSdN2s40aZvp7Uw7t+tN///fuSAJ0IZjJU6cxpwPfRoQQsvh3fRKbrUaNGjQoEGDBg0aNGjQoEGDBg0aNGjQoMGviIP9s7OTg223osHjhXN69vL5+eLoaLH3+qKhSgMZmRC5eP56b7HYw1gszp9fNkRpwOBg//JNJkUKiuwVTHm3v+2WNXgkODi5fPF670igCCXK+dm2m9dg+yCmiJIhBVEut93GBtvFwdmLyhSpR8OTncbZq5VipESjd3YYpy/W4gjmycm2G9tgSzh9vS5Jcp40/s5u4vS5Bkv2Fs9Pt93gBtvAxZEGS3Ke3BRnm1hh3S3TCp3Ntt6sf1kBJ7Tm7N8T/s8MoXRFG5P6nmXvj3Srm9+9RZvFpY4swTx5t3qmOwaEM1N5q+tBGEw22fquZ8Nk9SSEYwhBXLV5atgg5grMIDTSu9F32rftkbpn8wDag6FedX42hu6dGrRhaBkmBEdvVsmT0AOGYceqW5MlMgzob7D183FeY3tlkSArAqpBn2ftA0a3KhDhAuoWrwsTZJ2G6ioSaBhopiVPQpi1sX+jmHxAvNVmScaTlysq7GajYqCR6uO0svkwQKAtgethefnLklVFXNvI3zou3trNG4GYTxU32ACDu0i57mFeqbJn0TJjkOFpzXk7bzOa3qFBG8aBvjDJsYInN9JkuUGtQ2gyWlXEJyzwCl0/zf/uMTRxcQEDWOWVMA1SvU+5Y3NUZGEOcpr0u4pbtSA0eURa50zPfi2weFtb42OjCWFBNYVtkSYdUZqYAwjgWMuEfOo0eXMrYbK3Imz/2GgywaZHNeYSTaIgv8LYJrgHvZUGj4gnTpPTV7dkyWKvLmxPBvnx0KQVLm0bumV7ME0AOwXh7NBGjKeD1RLQsgyeOE3ObsmSnCc1YfvHJk1aLccaMhpEkiYZQrZAQxMJF7fVOXu1YfvHRxMeKprwaGgi4EArTi/Kk1fKsP0vQRPQ0EQD++e3Z0keZlPV2dCExxOgiXagXoDKLX50JqyARulo450eTaTSKvPkFtLEcSLTjJzaVRVyP1Lc52hCarmpz78cTdbr1j3iQE/nHF9diby5kCvVlSaR5aajIAhmo3SqWmSNhm4ymuUFEr8rxrwqmjjDOC81S2Kpksk0ZlbeFDQx21WBuWX5uJl+aGUgEz90pwoRGLXjLn2XDk2iTvlYhdB1mbhvRROzm+bdysZmeyvGJzrC5Pyv93+//88xT5Nz2YrVkyZRPLAh6gEAEIIQjmMhSG6lng0hQrQASCz+NqWJM11mpWihGf/lTvo2PKxoIdNkEhxCOyX/dw+zenDwPm8OtJchvmjbA2maolH1mAZNoln1WIkugLZRcbmgiRlnvc+61cu6hZJtLQW+1YnU//Usxz8CT+RgrBZNrDEEBgOAPJ+5HaV9xN03kMEpA7r0F6VsNQj47NvztT9QzbJMExzOh3gS8uVjDjCb0El+UV7YzisCiNSrQZMOXnrkp9wZ5avIQVU1Wfozx2zvkddRVH//0HKHv7/HNHn2haeJnHuiQ5OhhwwBgMlViVJbvG0AI2ZrJNIkFaqBKTNhZO2v/FRlmuACNp7HsC/SJKHcAdIizwyV7NKhiZs/ZvNLAVGAV5GrSDGuzh/x3QL9rRi1Wu7wh78JTf7iqLV4LaWeaNBkMsbjAOxM0sNDm0oEUM5oSL7tTCAfZrDpoEHmo8I0MXAxgGy7qIJL/dChiZNk+oUqHTsH7BaTCIRFHkIejzBDhyY9Q0qRUdKEdgtW3QJQM7tpI7jU0TlXlCaf+MuycaJhwqZ4AmHgWhNzMpz6Y5Sn4xil+RFmIwxgP/DdTmi13UwD4cFiMkMITfAIDtLYdeMAkEnuVfaJiiaghibZhLvuCE/PyM0Rlo8wOgEjxsojpk/dB01wt8a+O3V9qpuBbCHdP97o0OT4H8ySz9+F65JLvL40MYmE98vBzcz6AeozhoVrZLNfJZJaRArDyjwpaJKpIjKAUSfAZdCsLKMjTTAkh5g2lLMnHDKzlNKUJhNHxvwONEHLKdHApksEa02C3H1CM1J/9Tljyfs/hasLaaF4fWli2RKhnHnXYv+2unP2TzNB/COUJqBfKaL5mAxoKZPuTpNWykoOpi9oxjrERn+mQt+4LU3AuPLruphtG41NrocTwTS5+vjxw0p58unfT6IsqaPJWtJkij9BLfN93sc1lKKX0oRLLyYWDSx9zg3QpIsnbelIDxWz3aHzimQQs0IwYdejic3KL/IK9ODezktemHzKXRkhLrIG1LbJWjTBI93Xs8qIT1M+Q2iCAi6RP8bTXCamboAmEfFqmHiMmWe4VnztyC4Zj9tIE8hFVxzcBrTJhPN14PA65wNxeH9qsqTGhF2LJjE/f2uBUKAcc0ITyAfWQ3yxX0zhBmhCLkEmdamLJVY5Zzo0WVuaCF9Qh7D/gcP2p7zO+c8ztYm6GotXd3CIiQMhBiRXgzxTSl4qTfjQrPDtb4ImkwH2fislgKVaZf8USkeF29JEtEOIwvUe2Nc543XOf29HkxdSvevTxCLa1ldv/VLDwp81TxOwFBxRPO+ozf51R5rQMuU17L6AcXmb0mSpwOC2SkfaV4Jt84fevSMkEZBYvBiMv5EmcirB+jSJiJOHBv60O5+YK7fvUO+yNVTRRIho0Oh7TP/aCE0wPUvHhogEZiMNdYjnpoxbO8S8Z5Vhhn2dB7ZhhfzG77m/++xv0eG9CXImgUZ4zSWhMIAgGoyDWeq2FRLVCduunyYjAjyeAk2YGAkBtSToXxuhCQmTlNZCAHj5rxusX4smYmgeR40ees+omGvyIePJe10LVjZNdIL10QwWJl6+uAsh9IQV4JY5nXkwXyJm3UuRJmJaEmYCLGT2RmhC5Qel3hwJSuFBaELsoVjxjnuEvPXi6mqlxlHcrM03WXPpzxzZ/FIbQIcJl+TeFwoY69AE+wQooU3YDE2IB9wndhTx0Rj/+OnSRCdz7fj4y8+v375K5u2RYrMOpglQbq0mNBkzJmvkDpCYKhCUPHFc6icYvN+wDZqQBSgbv9nEOocN1jxdmqy73+/4+8ev337H9u17QaCospLIVm6OCyWGfNwLY95Olh4TrmS0RWtqEBsXAW85JvBUtolS6aDNKp3W0Cil5DBvhM1W8XRpsk5O0vH3n18/P6sgGLiLd4p6h9guVbr32AMBkj4yw057Go/GHs0bK8IRE7KMgWbTYelCdBSejtqERatM2PoV4lYdTUg0BvujWLAAKZK+4RViiSbJNkzYm7Lqv3+5/va+YsiPH3/88T+RJqrMegtLgL6luEVW0JK6OKLZmfUMZoLxdwf4mpQOsUgT4hAXIdINSRNqGLv5MS1AtL7uhSaxUBN2iFcf5rJ5nJ7X8+T4A0eR33/PKPJbBjFlWrU/lOQJqhLTI8yCVcfgRCl+loYnyOfLD4uSJmOBeHjeywj+pmhi5h3Ll49ImiLXLm2lw9duKmkixqeDXt33d5+oM06OP35lKPLsB2HIbzJN1KewOSNuiZ3BEC+pM/Mhg0Q3Sd7RJM/yEBWKiiZCJkjLSTYerCflsHTrYuEPBpzxpUGTqUJ1WJ4qWC/Yd6YnBGseBic1yuYzK0UqimT4KuRLK9zhVuEtKqKFM5J8trKfhGO4yLxnGFLEuq2iCeTfReKepe2wMZpgdYpSLC6FlVpdmgiSokPsOTHJkWc/cQCWOksbm8CB2iW+Jgz58QdPkRzXgmmiPrsCx7UNJI0ZPnhKNiR44C+VfDEhUEheX0UTxB/S1+5xc6aiCboNTZwZFnUx4OrD0M2sF47wSpU0EaiYKvj1EDhRWiffKlNExJ98eZU7nIOmj/m82gnJZWYhxGx3xU8DW4fUZZ5jmvDOLomZVyKbKh1uTx0+co+xlAWadKS0DZEmhEix3LEpsc4N+Zg1DZqEWPVyluicxAJEmhTBvOI5wA/fg0HpE39UUyTXOXx4rfbgzyn1a7l4andJVE4lNK2lDZdTvg48EVTREF084CQvOSGr4g6lSW/JvCrF7pJdShyBJjj+wa0WijQhAcJxSwImMembMFs627lInj6zn8Mk2ljOXmOPMp3gQg9vmuRQqZ3znzUs+W0ddziHQ/eXwL5LO+VYCd1DUDkIeAsTsJcu88m4iI2ekcRXZuwdYvYwg1WkTCOvoME8IV9ilZEo0IR8zWyKikiTuZIJVVWKDHedzaE+0SheccUa01rllGk4C8tCJFv84XVOKz9TS8GTq69qllwLMdij2tPrwwHdVwIGIz+O4zQotm0xmsihFi0Y+50wnM/DcDoiTxX+bYdoqWAaTpyWMw+nQfExlxq62oDRT6ZWGHZ8+sEzu2oEmlCHfZD6xb5gkSYRaX5/5Psub0VaxTYg0anXoUmx+6ifToehNU3LjYaqDRiDtG2FVjsluf3Ae2h3mGBfdd7nn2qVIwRNFuf1hwh3e8VaDN6JC4vda5Bd6onpWAAI+95y4PUh5U2hLoiRYfSgFyTpaEmCtIjLmy8y6/MbEPQNSIUWZPxxgSZU1mUtOxyZVQHWT6dCI2u7zc9LRNWDLWZmap1IQGUibXG1pCVn1uPBMfr5P+S92zrLYl9hxh6reCKyRJW4VqEr7/rMuzxibbLIh1WhYo2PPXOxNfRKthVLPvbIY7NQabA+EDeHBoxSwJNebSUkaaxknjpVAZYmhTQ0JClPbcuBaJXdTBOGWE4A+ebaPslmEeImSdUM2piV5yTfK5TuzhdJ71xfScVW/gJTOILC1AHoucLoDmdIKmSwMRDL43eiI+CSU6OL2QvJLvCQG3gAuUz7/ONl01gzMVawr03/zv5/yIqNjlHKP97TIgl3shdkHRrqkGJGijEQjZn5jE2PAMjHUgosq/fjKGxnCBDXLX9lgt/94kzFkw/XvCj5KSWbLF6v/sGUqBP0ESMjMi0rZ3FGncQDvaoQ8lJe+YapV1aS1THr5Fu6YA8VwiFK7B4yrNY8pdooE0u9QcwFJSzYAzb7ywVO7OGTMCD1j6wlypjFvXcYGHmJ7JVClHDUEzhHEcBsStX5hy5ESBBKZlyetAB6ubfn5iduVGLU9BDm+nAGim4hMG5v8ywc9Rrg8Yd/K5J8EhVOThPlwWssHCvGmWcZwDhR5S/mCNvJGJBSy9FUHv/QDwbYwEHjlJweE6VBdYKJ6QcjPDuWP8aV9INYfFNnFqT8dzifJvnZMgUlrayA8JAz9PGpOsJCmzOQVv1ojalUtoQ7C2IxQJR1C/faCFzM6WkwY2WtlQT4OBOnmwxwtwaz6UOHX0XUbDn//uenn9fXPz99Uee0rfVrbmZoWUMrnK/8DjInJitkhXUi1ZzfXAeuxsoqud/Nk11+/8edsGZzo3xwwm1zJMdL/ZP6Fu928UfO8aKiOuVqB3Bwi1OEd/InRPGOqo3+INAvBUfrDIsMR/W/gPGUQbambifE9RjgvNCSJ0erYiZPFx286qfcNLAjqMkqUGPxYvcME8eJ2iRoso2DrR4NlMs7apIsXu4cS5xOms5wgEfKz94xrMmTxeLV7v2wuZMe0rWXbS2+PR4olwFFjpy/O9s5UdJqWeU5oI/pdxq3hJOV8mSx2Hv94u3+DpIkp0mxrBLvsP1aYP+V2i9eLI6Ozt+9PdnZn72PZjZCCB56jSzJcfBmIQqURaZonl9cnu6kFClhxkmS+t0trtA+Lly+YojSUKRBDU7fPj/P+ZGxJafIbtoiDdbA6dnbi4uLt2c7a4o0aNCgQYMGDRo0aNCgQYMGDZ4Q/g+kV5FklJgJ2gAAAABJRU5ErkJggg=="
+                    alt="">
+            </a>
+
+            <div class="links-column flex">
+                <h2>Product</h2>
+                <p>Overview</p>
+                <p>Pricing</p>
+                <p>Usibilityhub panel</p>
+                <p>Customers</p>
+                <p>Status Page</p>
+            </div>
+
+            <div class="links-column flex">
+                <h2>Methodology</h2>
+                <p>Overview</p>
+                <p>Pricing</p>
+                <p>Usibilityhub panel</p>
+                <p>Customers</p>
+                <p>Status Page</p>
+            </div>
+
+            <div class="links-column flex">
+                <h2>Resources</h2>
+                <p>Overview</p>
+                <p>Pricing</p>
+                <p>Usibilityhub panel</p>
+                <p>Customers</p>
+                <p>Status Page</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="subfooter">
+        <div class="container subfooter-section flex">
+            <a>Privacy policy</a>
+            <a>Terms $ Conditions</a>
+            <a>Security information</a>
+            <a><i class="fa-brands fa-twitter"></i></a>
+            <a><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
